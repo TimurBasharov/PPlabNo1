@@ -162,3 +162,56 @@ class InsufficientStockError(StoreError):
 class InvalidOrderError(StoreError):
     """Ошибка: некорректный заказ"""
     pass
+
+
+if __name__ == "__main__":
+    # Создаём магазин
+    store = EStore("TechStore")
+
+    # Создаём склад
+    warehouse = Warehouse("Москва")
+
+    # Создаём товары
+    laptop = Product("Ноутбук", 75000.0, 10)
+    phone = Product("Смартфон", 45000.0, 15)
+
+    # Добавляем товары на склад
+    warehouse.add_product(laptop)
+    warehouse.add_product(phone)
+
+    # Добавляем работника
+    worker = Worker("Иван", "менеджер склада")
+    warehouse.add_worker(worker)
+
+    # Добавляем склад в магазин
+    store.add_warehouse(warehouse)
+
+    # Создаём покупателя
+    customer = Customer("Петр", "petr@mail.ru")
+    store.add_customer(customer)
+
+    # Создаём заказ
+    order = Order(customer, laptop, 1)
+    store.add_order(order)
+
+    # Обрабатываем заказ
+    try:
+        order.process_order()
+        print(f"✅ Заказ обработан: {customer.name} купил {order.quantity} шт. {order.product.name}")
+    except StoreError as e:
+        print(f"⚠ Ошибка при обработке заказа: {e}")
+
+    # Сохраняем данные в файлы
+    store.save_to_json("estore_data.json")
+    store.save_to_xml("estore_data.xml")
+
+    print("\n💾 Данные сохранены в файлы estore_data.json и estore_data.xml\n")
+
+    # Выводим содержимое файлов
+    with open("estore_data.json", "r", encoding="utf-8") as f:
+        print("=== JSON ФАЙЛ ===")
+        print(f.read())
+
+    with open("estore_data.xml", "r", encoding="utf-8") as f:
+        print("\n=== XML ФАЙЛ ===")
+        print(f.read())

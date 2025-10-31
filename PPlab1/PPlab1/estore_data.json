@@ -1,0 +1,39 @@
+{
+    "name": "TechStore",
+    "warehouses": [
+        {
+            "location": "Москва",
+            "products": [
+                {
+                    "name": "Ноутбук",
+                    "price": 75000.0,
+                    "quantity": 9
+                },
+                {
+                    "name": "Смартфон",
+                    "price": 45000.0,
+                    "quantity": 15
+                }
+            ],
+            "workers": [
+                {
+                    "name": "Иван",
+                    "role": "менеджер склада"
+                }
+            ]
+        }
+    ],
+    "customers": [
+        {
+            "name": "Петр",
+            "email": "petr@mail.ru"
+        }
+    ],
+    "orders": [
+        {
+            "customer": "Петр",
+            "product": "Ноутбук",
+            "quantity": 1
+        }
+    ]
+}
