@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CN-Optics Direct | Каталог оптических компонентов</title>
+    <style>
+        /* Базовые стили */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0b0d17;
+            color: #e0e0e0;
+        }
+
+        header {
+            background-color: #151932;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #4a90e2;
+        }
+
+        h1 { margin: 0; color: #4a90e2; }
+        h2 { color: #ffffff; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Сетка товаров */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .product-card {
+            background-color: #1c2140;
+            border: 1px solid #2c3460;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: #4a90e2;
+        }
+
+        /* CSS-заглушка вместо картинки */
+        .product-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #1c2140 0%, #2c3460 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a90e2;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #2c3460;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .product-title {
+            font-size: 1.1em;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .specs {
+            font-size: 0.85em;
+            color: #aaa;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        .specs strong {
+            color: #4a90e2;
+        }
+
+        .purpose {
+            font-size: 0.8em;
+            color: #888;
+            font-style: italic;
+            margin: 10px 0;
+            padding: 8px;
+            background-color: #151932;
+            border-radius: 4px;
+        }
+
+        .price {
+            font-size: 1.3em;
+            color: #4caf50;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1em;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #357abd;
+        }
+
+        /* Кнопка очистки корзины */
+        .btn-clear {
+            background-color: #d32f2f;
+            margin-top: 10px;
+        }
+
+        .btn-clear:hover {
+            background-color: #b71c1c;
+        }
+
+        /* Корзина */
+        .cart-summary {
+            margin-top: 40px;
+            background-color: #151932;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: right;
+            border: 1px solid #2c3460;
+        }
+
+        .total-price {
+            font-size: 1.8em;
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        .cart-info {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .cart-actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+
+        .cart-actions button {
+            width: auto;
+            padding: 15px 30px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.8em;
+            color: #666;
+            border-top: 1px solid #2c3460;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            .cart-actions {
+                flex-direction: column;
+            }
+            .cart-actions button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>CN-Optics Direct</h1>
+    <p>Оптические компоненты для телескопов напрямую от производителей</p>
+</header>
+
+<div class="container">
+
+    <section>
+        <h2>Каталог товаров (Поставщики: Svbony, GSO, Sky-Watcher)</h2>
+        <div class="products-grid">
+
+            <!-- Товар 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    Линза Барлоу 2x<br>(1.25")
+                </div>
+                <h3 class="product-title">Линза Барлоу 2x (1.25")</h3>
+                <p class="specs">
+                    <strong>Тип:</strong> Ахроматическая дублетная<br>
+                    <strong>Посадка:</strong> 1.25 дюйма<br>
+                    <strong>Увеличение:</strong> 2.0×<br>
+                    <strong>Просветление:</strong> FMC
+                </p>
+                <p class="purpose">
+                    <strong>Назначение:</strong> Базовое увеличение фокусного расстояния.
+                </p>
+                <p class="price">Цена: 2 100 ₽</p>
+                <button onclick="addToCart(2100, 'Линза Барлоу 2x (1.25&quot;)')">В корзину</button>
+            </div>
+
+            <!-- Товар 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    Линза Барлоу 3x<br>(2 дюйма)
+                </div>
+                <h3 class="product-title">Линза Барлоу 3x (2")</h3>
+                <p class="specs">
+                    <strong>Тип:</strong> Профессиональная ахроматическая<br>
+                    <strong>Посадка:</strong> 2 дюйма<br>
+                    <strong>Увеличение:</strong> 3.0×<br>
+                    <strong>Материал:</strong> Оптическое стекло
+                </p>
+                <p class="purpose">
+                    <strong>Назначение:</strong> Для продвинутых наблюдений планет.
+                </p>
+                <p class="price">Цена: 5 800 ₽</p>
+                <button onclick="addToCart(5800, 'Линза Барлоу 3x (2&quot;)')">В корзину</button>
+            </div>
+
+            <!-- Товар 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    Набор фильтров<br>(6 штук)
+                </div>
+                <h3 class="product-title">Набор цветных фильтров (6 шт.)</h3>
+                <p class="specs">
+                    <strong>Комплект:</strong> Yellow, Orange, Red, Green, Blue<br>
+                    <strong>Посадка:</strong> 1.25 дюйма<br>
+                    <strong>Материал:</strong> Оптическое стекло
+                </p>
+                <p class="purpose">
+                    <strong>Назначение:</strong> Повышение контраста на планетах.
+                </p>
+                <p class="price">Цена: 1 500 ₽</p>
+                <button onclick="addToCart(1500, 'Набор цветных фильтров (6 шт.)')">В корзину</button>
+            </div>
+
+            <!-- Товар 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    Окуляр Plössl<br>10 мм
+                </div>
+                <h3 class="product-title">Окуляр Plössl 10 мм</h3>
+                <p class="specs">
+                    <strong>Фокусное:</strong> 10 мм<br>
+                    <strong>Поле зрения:</strong> 52°<br>
+                    <strong>Посадка:</strong> 1.25 дюйма<br>
+                    <strong>Просветление:</strong> FMC
+                </p>
+                <p class="purpose">
+                    <strong>Назначение:</strong> Универсальный окуляр для планет.
+                </p>
+                <p class="price">Цена: 3 200 ₽</p>
+                <button onclick="addToCart(3200, 'Окуляр Plössl 10 мм')">В корзину</button>
+            </div>
+
+            <!-- Товар 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    Окуляр Plössl<br>25 мм
+                </div>
+                <h3 class="product-title">Окуляр Plössl 25 мм</h3>
+                <p class="specs">
+                    <strong>Фокусное:</strong> 25 мм<br>
+                    <strong>Поле зрения:</strong> 52°<br>
+                    <strong>Посадка:</strong> 1.25 дюйма<br>
+                    <strong>Вынос зрачка:</strong> 18 мм
+                </p>
+                <p class="purpose">
+                    <strong>Назначение:</strong> Малое увеличение, широкий обзор.
+                </p>
+                <p class="price">Цена: 3 400 ₽</p>
+                <button onclick="addToCart(3400, 'Окуляр Plössl 25 мм')">В корзину</button>
+            </div>
+
+            <!-- Товар 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    Фильтр UHC<br>(Контраст)
+                </div>
+                <h3 class="product-title">Фильтр UHC (Ultra High Contrast)</h3>
+                <p class="specs">
+                    <strong>Тип:</strong> Узкополосный<br>
+                    <strong>Посадка:</strong> 1.25 дюйма<br>
+                    <strong>Пропускание:</strong> 485-510 нм<br>
+                    <strong>Подавление:</strong> Светового загрязнения
+                </p>
+                <p class="purpose">
+                    <strong>Назначение:</strong> Наблюдение туманностей в городе.
+                </p>
+                <p class="price">Цена: 4 500 ₽</p>
+                <button onclick="addToCart(4500, 'Фильтр UHC')">В корзину</button>
+            </div>
+
+            <!-- Товар 7 -->
+            <div class="product-card">
+                <div class="product-image">
+                    Адаптер T2<br>→ 1.25"
+                </div>
+                <h3 class="product-title">Адаптер T2 → 1.25"</h3>
+                <p class="specs">
+                    <strong>Тип:</strong> Резьбовое соединение<br>
+                    <strong>Материал:</strong> Алюминий анодированный<br>
+                    <strong>Резьба:</strong> T2 (M42×0.75)<br>
+                    <strong>Совместимость:</strong> DSLR-камеры
+                </p>
+                <p class="purpose">
+                    <strong>Назначение:</strong> Подключение камер для астрофото.
+                </p>
+                <p class="price">Цена: 950 ₽</p>
+                <button onclick="addToCart(950, 'Адаптер T2 → 1.25&quot;')">В корзину</button>
+            </div>
+
+            <!-- Товар 8 -->
+            <div class="product-card">
+                <div class="product-image">
+                    Лунный фильтр<br>(ND 13%)
+                </div>
+                <h3 class="product-title">Лунный фильтр (ND 13%)</h3>
+                <p class="specs">
+                    <strong>Тип:</strong> Нейтрально-серый<br>
+                    <strong>Посадка:</strong> 1.25 дюйма<br>
+                    <strong>Пропускание:</strong> 13%<br>
+                    <strong>Покрытие:</strong> FMC
+                </p>
+                <p class="purpose">
+                    <strong>Назначение:</strong> Снижение яркости Луны.
+                </p>
+                <p class="price">Цена: 850 ₽</p>
+                <button onclick="addToCart(850, 'Лунный фильтр (ND 13%)')">В корзину</button>
+            </div>
+
+            <!-- Товар 9 -->
+            <div class="product-card">
+                <div class="product-image">
+                    Wide Angle<br>6 мм
+                </div>
+                <h3 class="product-title">Окуляр Wide Angle 6 мм</h3>
+                <p class="specs">
+                    <strong>Фокусное:</strong> 6 мм<br>
+                    <strong>Поле зрения:</strong> 82° (сверхширокое)<br>
+                    <strong>Посадка:</strong> 1.25 дюйма<br>
+                    <strong>Просветление:</strong> FMC
+                </p>
+                <p class="purpose">
+                    <strong>Назначение:</strong> Высокое увеличение с широким полем.
+                </p>
+                <p class="price">Цена: 6 200 ₽</p>
+                <button onclick="addToCart(6200, 'Окуляр Wide Angle 6 мм')">В корзину</button>
+            </div>
+
+            <!-- Товар 10 -->
+            <div class="product-card">
+                <div class="product-image">
+                    Солнечный фильтр<br>(Плёнка)
+                </div>
+                <h3 class="product-title">Солнечный фильтр (плёнка)</h3>
+                <p class="specs">
+                    <strong>Тип:</strong> Полноапертурный<br>
+                    <strong>Материал:</strong> Оптическая плёнка ND5.0<br>
+                    <strong>Посадка:</strong> 1.25 дюйма<br>
+                    <strong>Безопасность:</strong> Сертифицирован
+                </p>
+                <p class="purpose">
+                    <strong>Назначение:</strong> Безопасное наблюдение Солнца.
+                </p>
+                <p class="price">Цена: 2 800 ₽</p>
+                <button onclick="addToCart(2800, 'Солнечный фильтр (плёнка)')">В корзину</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cart-summary">
+        <h3>Итоговая стоимость заказа:</h3>
+        <div class="total-price" id="total">0 ₽</div>
+        <p class="cart-info" id="cart-count">Товаров в корзине: 0</p>
+        <p style="font-size: 0.8em; color: #888; margin-top: 15px;">
+            *В цену включена логистика до Москвы (Эконом)<br>
+            **Срок доставки: 14–21 день
+        </p>
+
+        <div class="cart-actions">
+            <button onclick="clearCart()" class="btn-clear">Очистить корзину</button>
+            <button onclick="placeOrder()">Оформить заказ</button>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2026 CN-Optics Direct. Реферат по дисциплине «Модели и методы теории вычислений».<br>
+    Данные о ценах и характеристиках актуальны на февраль 2026 г.</p>
+</footer>
+
+<script>
+    // Глобальные переменные состояния
+    let totalSum = 0;
+    let itemCount = 0;
+    const cartItems = [];
+
+    // Функция добавления товара в корзину
+    function addToCart(price, name) {
+        totalSum += price;
+        itemCount++;
+        cartItems.push({ name: name, price: price });
+
+        updateCartDisplay();
+
+        console.log("[" + new Date().toLocaleTimeString() +
+                    "] Добавлен: " + name + " (" + price + " ₽)");
+    }
+
+    // Функция очистки корзины
+    function clearCart() {
+        if (totalSum > 0) {
+            if (confirm("Вы уверены, что хотите очистить корзину?")) {
+                totalSum = 0;
+                itemCount = 0;
+                cartItems.length = 0;
+                updateCartDisplay();
+                console.log("[" + new Date().toLocaleTimeString() +
+                            "] Корзина очищена");
+            }
+        } else {
+            alert("Корзина уже пуста.");
+        }
+    }
+
+    // Функция оформления заказа
+    function placeOrder() {
+        if (totalSum > 0) {
+            let message = "Заказ сформирован!\n\n";
+            message += "Состав заказа:\n";
+            cartItems.forEach((item, index) => {
+                message += (index + 1) + ". " + item.name +
+                           " — " + item.price + " ₽\n";
+            });
+            message += "\nИтого: " + totalSum + " ₽\n\n";
+            message += "Данные отправлены поставщику.";
+
+            alert(message);
+            clearCartWithoutConfirm();
+        } else {
+            alert("Корзина пуста. Добавьте товары.");
+        }
+    }
+
+    // Внутренняя функция сброса (без подтверждения)
+    function clearCartWithoutConfirm() {
+        totalSum = 0;
+        itemCount = 0;
+        cartItems.length = 0;
+        updateCartDisplay();
+    }
+
+    // Функция обновления отображения корзины
+    function updateCartDisplay() {
+        document.getElementById('total').innerText = totalSum + " ₽";
+        document.getElementById('cart-count').innerText =
+            "Товаров в корзине: " + itemCount;
+    }
+
+    // Инициализация при загрузке страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        updateCartDisplay();
+        console.log("[" + new Date().toLocaleTimeString() +
+                    "] Система инициализирована. Готов к работе.");
+    });
+</script>
+
+</body>
+</html>
